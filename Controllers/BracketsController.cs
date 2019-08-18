@@ -254,7 +254,6 @@ namespace tourneybracket.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreatePlayerPost(int id, string[] TeamTemp, [Bind("id,BracketName,CreatedAt,TotalRounds")] Bracket bracket)
         {
-            Debug.WriteLine("Testing this, because clearly nothing works. Lorem Ipsum");
             var bracket1 = await _context.Brackets
                 .FirstOrDefaultAsync(m => m.id == id);
             Debug.WriteLine("TotalRounds: " + bracket1.TotalRounds);
